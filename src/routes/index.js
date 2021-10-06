@@ -8,10 +8,12 @@ export default createRouter({
   routes: [
     {
       path: '/',
+      name: 'home',
       component: Home,
     },
     {
       path: '/list/:keyword',
+      name: 'list',
       component: SearchedList 
     },
     {
