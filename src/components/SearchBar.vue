@@ -1,6 +1,6 @@
 <template>
   <div class="header__searchBar">
-    <form @submit.prevent="searchInit">
+    <form @submit.prevent="onSubmit">
       <input
         v-model="inputText"
         type="text"
@@ -22,8 +22,8 @@ export default {
     };
   },
   methods: {
-    searchInit() {
-      this.$store.dispatch('searchMovie/searchInit', this.inputText);
+    onSubmit() {
+      this.$router.push(`/list/${this.inputText}`);
     }
   }
 };

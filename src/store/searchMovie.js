@@ -1,5 +1,3 @@
-import router from '~/routes';
-
 export default {
   namespaced: true,
   state() {
@@ -12,24 +10,17 @@ export default {
   mutations: {
     setState(state, payload) {
       const { newResults, totalResults } = payload;
-      state = {
-        ...state,
-        searchResults: [ ...state.searchResults, newResults ],
-        totalResults
-      };
-      console.log('최신 state:', state);
-
+      state.searchResults = newResults;
+      state.totalResults = totalResults;
     }
   },
   actions: {
-    async searchInit({ commit }, keyword) {
+    async getMovies({ commit }, keyword) {
       const searchResults = await _request(keyword);
-      console.log(searchResults);
       await commit('setState', {
         newResults: searchResults.Search,
         totalResults: searchResults.totalResults
       });
-      router.push(`/list/${keyword}`);
     }
   }
 };
