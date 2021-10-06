@@ -14,10 +14,16 @@
       <span class="info__title">{{ movie.Title }}</span>
     </div>
   </div>
+  <Modal />
 </template>
 
 <script>
+import Modal from '~/components/Modal';
+
 export default {
+  components: {
+    Modal
+  },
   computed: {
     movies() {
       return this.$store.state.searchMovie.searchResults;

@@ -4,7 +4,8 @@ export default {
     return {
       searchResults: [],
       totalResults: '',
-      detailResult: {}
+      detailResult: {},
+      modalOn: false
     };
   },
   getters: {},
@@ -23,11 +24,15 @@ export default {
         totalResults: res.totalResults
       });
     },
-    async getDetails({ commit }, id) {
+    async getDetails({ commit, dispatch }, id) {
       const detailResult = await _requestDetail(id);
       await commit('setState', {
         detailResult
       });
+      await dispatch('toggleModal');
+    },
+    toggleModal({ state }) {
+      state.modalOn = !state.modalOn;
     }
   }
 };

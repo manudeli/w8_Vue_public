@@ -1,5 +1,6 @@
 <template>
-  <div class="app__inner">
+  <div
+    class="app__inner">
     <header class="app__header">
       <div class="header__logo">
         Search Movie
@@ -26,23 +27,25 @@ export default {
 
 <style lang="scss" scoped>
 .app__inner {
-  height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   header {
+    box-sizing: border-box;
     background-color: gray;
-    position: fixed;
-    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
     height: 100px;
     display: flex;
     align-items: center;
     padding: 0 50px;
   }
   main {
+    position: relative;
+    height: 100vh;
     background-color: rgba(#000, 0.2);
-    flex-grow: 1;
-    padding: 150px 50px 50px;
-
+    margin: 50px;
     .main__inner {
       background-color: whitesmoke;
       width: 100%;
