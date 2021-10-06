@@ -2,7 +2,8 @@
   <div
     v-for="movie in movies"
     :key="movie.imdbID"
-    class="main__item">
+    class="main__item"
+    @click="showDetails(movie.imdbID)">
     <div>
       <img
         class="item__poster"
@@ -30,6 +31,12 @@ export default {
   },
   created() {
     this.$store.dispatch('searchMovie/getMovies', this.$route.params.keyword);
+  },
+  methods: {
+    showDetails(id) {
+      console.log('클릭', id);
+      this.$store.dispatch('searchMovie/getDetails', id);
+    }
   }
 };
 </script>
