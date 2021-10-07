@@ -30,7 +30,11 @@ export default {
   },
   methods: {
     onSubmit() {
-      this.$router.push(`/list/${this.inputText}`);
+      // this.$router.push(`/search?kw=${this.inputText}`);
+      this.$router.push({
+        name: 'search',
+        query: {kw: `${this.inputText}`}
+      });
     }
   }
 };

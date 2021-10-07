@@ -27,6 +27,9 @@ export default {
     Modal,
     Spinner
   },
+  props: {
+    
+  },
   computed: {
     movies() {
       return this.$store.state.searchMovie.searchResults;
@@ -40,13 +43,13 @@ export default {
   },
   watch: {
     $route() {
-      console.log(`${this.$route.params.keyword}로 주소 바뀜!`);
+      console.log(`${this.$route.query.kw}로 주소 바뀜!`);
       this.$store.commit('searchMovie/resetPageState');
-      this.$store.dispatch('searchMovie/getMovies', this.$route.params.keyword);
+      this.$store.dispatch('searchMovie/getMovies', this.$route.query.kw);
     }
   },
   created() {
-    this.$store.dispatch('searchMovie/getMovies', this.$route.params.keyword);
+    this.$store.dispatch('searchMovie/getMovies', this.$route.query.kw);
     this.bindScrollEvent();
   },
   methods: {
@@ -60,7 +63,7 @@ export default {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             if (this.pageNumber <= this.totalPages && !this.$store.state.searchMovie.modalOn) {
-              this.$store.dispatch('searchMovie/getMovies', this.$route.params.keyword);
+              this.$store.dispatch('searchMovie/getMovies', this.$route.query.kw);
             }
           }
         });
