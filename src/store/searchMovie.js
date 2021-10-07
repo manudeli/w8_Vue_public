@@ -1,3 +1,5 @@
+import router from '~/routes';
+
 export default {
   namespaced: true,
   state() {
@@ -42,12 +44,17 @@ export default {
     async getMovies({ state, commit }, keyword) {
       commit('toggleLoading');
       const res = await _request(keyword, state.pageNumber);
-      await commit('setState', {
-        searchResults: res.Search,
-        totalResults: parseInt(res.totalResults, 10)
-      });
-      commit('toggleLoading');
-      commit('increasePageNumber');
+      if (res.Response === 'True') {
+        await commit('setState', {
+          searchResults: res.Search,
+          totalResults: parseInt(res.totalResults, 10)
+        });
+        commit('toggleLoading');
+        commit('increasePageNumber');
+      } else {
+        router.push('noresult');
+        commit('toggleLoading');
+      }
     },
     async getDetails({ commit, dispatch }, id) {
       commit('toggleLoading');

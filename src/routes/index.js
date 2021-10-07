@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from './Home';
 import List  from './List ';
+import NoResult from './NoResult';
 import NotFound from './NotFound';
 
 export default createRouter({
@@ -18,6 +19,11 @@ export default createRouter({
       path: '/list/:keyword',
       name: 'list',
       component: List 
+    },
+    {
+      path: '/list/noresult',
+      name: 'noresult',
+      component: NoResult 
     },
     {
       path: '/:notFound(.*)',
