@@ -15,7 +15,9 @@
       </div>
     </main>
     <footer class="app__footer">
-      “Cinema is a matter of what's in the frame and what's out”
+      <span class="footer__text">
+        “Cinema is a matter of what's in the frame and what's out”
+      </span>
     </footer>
   </div>
 </template>
@@ -33,7 +35,7 @@ export default {
 <style lang="scss" scoped>
 .app__inner {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: $font-main;
@@ -43,10 +45,11 @@ export default {
     position: sticky;
     top: 0;
     z-index: 9998;
-    height: 100px;
+    height: $height-header;
     display: flex;
     align-items: center;
     padding: 0 50px;
+    flex-shrink: 0;
     .header__logo {
       position: absolute;
       cursor: pointer;
@@ -59,7 +62,8 @@ export default {
     // position: relative;
     // height: 100%;
     // background-color: rgba(#000, 0.2);
-    min-height: 100vh;
+    // min-height: calc(100vh - ($height-header + $height-footer));
+    height: 100%;
     margin: 50px;
     flex-grow: 1;
     .main__inner {
@@ -72,9 +76,17 @@ export default {
   }
   footer {
     background-color: $color-main-theme--light;
-    height: 50px;
+    height: $height-footer;
     color: $color-main-font--light;
     text-align: center;
+    .footer__text{
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 400px;
+    }
   }
 }
 </style>
