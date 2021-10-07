@@ -42,7 +42,7 @@ export default {
     background-color: gray;
     position: sticky;
     top: 0;
-    z-index: 9999;
+    z-index: 9998;
     height: 100px;
     display: flex;
     align-items: center;

@@ -50,7 +50,7 @@ export default {
 
 <style lang="scss" scoped>
 .main__modal-container {
-  z-index: 10000;
+  z-index: 9999;
   position: absolute;
   top: 0;
   left: 0;

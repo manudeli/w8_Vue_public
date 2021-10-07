@@ -15,14 +15,17 @@
     </div>
   </div>
   <Modal />
+  <Spinner />
 </template>
 
 <script>
 import Modal from '~/components/Modal';
+import Spinner from '~/components/Spinner';
 
 export default {
   components: {
-    Modal
+    Modal,
+    Spinner
   },
   computed: {
     movies() {

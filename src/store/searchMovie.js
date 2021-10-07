@@ -6,6 +6,7 @@ export default {
       totalResults: '',
       detailResult: {},
       pageNumber: 1,
+      isLoading: false,
       modalOn: false
     };
   },
@@ -19,7 +20,6 @@ export default {
       const payloadKeys = Object.keys(payload);
       if (payloadKeys.includes('searchResults')) {
         state.searchResults = state.searchResults.concat(payload['searchResults']);
-        // state.searchResults = [ ...state.searchResults, ...payload['searchResults']];
       }
       payloadKeys
         .filter(key => key !== 'searchResults')
@@ -33,23 +33,30 @@ export default {
     },
     increasePageNumber(state) {
       state.pageNumber += 1;
-    }
+    },
+    toggleLoading(state) {
+      state.isLoading = !state.isLoading;
+    } 
   },
   actions: {
     async getMovies({ state, commit }, keyword) {
+      commit('toggleLoading');
       const res = await _request(keyword, state.pageNumber);
       await commit('setState', {
         searchResults: res.Search,
         totalResults: parseInt(res.totalResults, 10)
       });
+      commit('toggleLoading');
       commit('increasePageNumber');
     },
     async getDetails({ commit, dispatch }, id) {
+      commit('toggleLoading');
       const detailResult = await _requestDetail(id);
       await commit('setState', {
         detailResult
       });
-      await dispatch('toggleModal');
+      dispatch('toggleModal');
+      commit('toggleLoading');
     },
     toggleModal({ state }) {
       state.modalOn = !state.modalOn;
