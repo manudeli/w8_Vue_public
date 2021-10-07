@@ -12,6 +12,9 @@
         <RouterView />
       </div>
     </main>
+    <footer class="app__footer">
+      “Cinema is a matter of what's in the frame and what's out”
+    </footer>
   </div>
 </template>
 
@@ -25,9 +28,11 @@ export default {
 };
 </script>
 
+
 <style lang="scss" scoped>
 .app__inner {
   position: relative;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   header {
@@ -42,10 +47,12 @@ export default {
     padding: 0 50px;
   }
   main {
-    position: relative;
-    height: 100vh;
-    background-color: rgba(#000, 0.2);
+    // position: relative;
+    // height: 100%;
+    // background-color: rgba(#000, 0.2);
+    min-height: 100vh;
     margin: 50px;
+    flex-grow: 1;
     .main__inner {
       background-color: whitesmoke;
       width: 100%;
@@ -53,6 +60,11 @@ export default {
       display: flex;
       flex-wrap: wrap;
     }
+  }
+  footer {
+    height: 50px;
+    background-color: gray;
+    text-align: center;
   }
 }
 </style>

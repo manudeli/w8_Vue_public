@@ -27,21 +27,44 @@ export default {
   computed: {
     movies() {
       return this.$store.state.searchMovie.searchResults;
+    },
+    pageNumber() {
+      return this.$store.state.searchMovie.pageNumber;
+    },
+    totalPages() {
+      return this.$store.getters['searchMovie/totalPages'];
     }
   },
   watch: {
     $route() {
       console.log(`${this.$route.params.keyword}로 주소 바뀜!`);
+      this.$store.commit('searchMovie/resetPageState');
       this.$store.dispatch('searchMovie/getMovies', this.$route.params.keyword);
     }
   },
   created() {
     this.$store.dispatch('searchMovie/getMovies', this.$route.params.keyword);
+    this.bindScrollEvent();
   },
   methods: {
     showDetails(id) {
       console.log('클릭', id);
       this.$store.dispatch('searchMovie/getDetails', id);
+    },
+    bindScrollEvent() {
+      const footer = document.querySelector('footer');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (this.pageNumber <= this.totalPages && !this.$store.state.searchMovie.modalOn) {
+              this.$store.dispatch('searchMovie/getMovies', this.$route.params.keyword);
+            }
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+      observer.observe(footer);
     }
   }
 };
