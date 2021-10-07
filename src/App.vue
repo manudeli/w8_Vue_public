@@ -5,7 +5,7 @@
       <div
         class="header__logo"
         @click="$router.push('/')">
-        <span class="logo__text">Search Movie</span>
+        <span class="logo__text">SEARCH🍳MOV</span>
       </div>
       <SearchBar />
     </header>
@@ -30,16 +30,16 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
 .app__inner {
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: $font-main;
   header {
     box-sizing: border-box;
-    background-color: gray;
+    background-color: $color-main-theme;
     position: sticky;
     top: 0;
     z-index: 9998;
@@ -47,6 +47,13 @@ export default {
     display: flex;
     align-items: center;
     padding: 0 50px;
+    .header__logo {
+      position: absolute;
+      cursor: pointer;
+      .logo__text {
+        color: $color-main-font;
+      }
+    }
   }
   main {
     // position: relative;
@@ -64,8 +71,9 @@ export default {
     }
   }
   footer {
+    background-color: $color-main-theme--light;
     height: 50px;
-    background-color: gray;
+    color: $color-main-font--light;
     text-align: center;
   }
 }
