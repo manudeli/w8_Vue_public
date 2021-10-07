@@ -2,8 +2,10 @@
   <div
     class="app__inner">
     <header class="app__header">
-      <div class="header__logo">
-        Search Movie
+      <div
+        class="header__logo"
+        @click="$router.push('/')">
+        <span class="logo__text">Search Movie</span>
       </div>
       <SearchBar />
     </header>

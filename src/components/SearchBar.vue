@@ -21,6 +21,13 @@ export default {
       inputText: ''
     };
   },
+  watch: {
+    $route() {
+      if (this.$route.name === 'home') {
+        this.inputText = '';
+      }
+    }
+  },
   methods: {
     onSubmit() {
       this.$router.push(`/list/${this.inputText}`);

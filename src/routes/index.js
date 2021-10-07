@@ -21,6 +21,7 @@ export default createRouter({
     },
     {
       path: '/:notFound(.*)',
+      name: 'notfound',
       component: NotFound
     }
   ]
