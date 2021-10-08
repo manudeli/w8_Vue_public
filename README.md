@@ -2,23 +2,27 @@
 
 # 🎥 영화 검색 프로젝트 (Vue.js, OMDb API 활용)
 
-# 🔗 [프로젝트 링크](https://moviejonghyeon.netlify.com)
+### [프로젝트 링크 🔗](https://moviejonghyeon.netlify.com)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/808c7331-83de-4e2f-82e1-490f7d0fcb3b/deploy-status)](https://app.netlify.com/sites/nostalgic-davinci-958000/deploys)
 
 
 ## 1. 검색
-![검색](https://user-images.githubusercontent.com/61593290/136544602-921bbe6c-876a-442a-90db-01f7a5ba1e94.gif)
+![검색](https://user-images.githubusercontent.com/61593290/136559660-e6c35036-4673-40a7-9ca3-08b3b2d19656.gif)
+
 
 
 ## 2. 새로고침시 자동 추천어 검색
-![새로고침시 자동 추천어 검색](https://user-images.githubusercontent.com/61593290/136542655-82962ff3-e9cc-4f60-9ee7-5ec43272a764.gif)
+![새로고침시 자동 추천어 검색](https://user-images.githubusercontent.com/61593290/136559639-0d71b926-84c2-493a-821f-7cf1c19b7e1b.gif)
+
 
 ## 3. 마우스 클릭&드래그 / 터치 둘다 되는 슬라이드
-![마우스 클릭 앤 드래그 터치 다 되는 슬라이드2](https://user-images.githubusercontent.com/61593290/136544011-bc0b9544-fc30-49d2-9d87-3e8494ac146d.gif)
+![마우스 클릭 앤 드래그 터치 다 되는 슬라이드2](https://user-images.githubusercontent.com/61593290/136559689-c70d0a3c-41d0-40fc-bbfd-e0dc70a1c264.gif)
+
 
 
 ## 4. 반응형
-![반응형](https://user-images.githubusercontent.com/61593290/136542637-d15b6843-b352-4fe0-a2ed-fb14045f2692.gif)
+![반응형](https://user-images.githubusercontent.com/61593290/136559700-78492e70-3de0-412f-a0dc-aa66d68ee21c.gif)
+
 
 
 
