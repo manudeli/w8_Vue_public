@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../Volumes/Data/Project/Programmers/\u1100\u116A\u110C\u1166/w8_Vue_public/functions/types.ts"],
+  "sourceRoot": "/var/folders/37/0h3m8w153cgdls6rhksqzfj40000gn/T/tmp-31481-rRWAUDSJ5T19",
+  "sourcesContent": ["export enum Methods {\n  get = 'GET',\n  post = 'POST',\n  put = 'PUT',\n  delete = 'DELETE',\n  connect = 'CONNECT',\n  patch = 'PATCH',\n}\n\nexport enum ApiType {\n  id = 'i',\n  title = 't',\n  search = 's',\n}\n\nexport enum OptionType {\n  year = 'y',\n  type = 'type',\n  page = 'page',\n}\n\nexport type Option = {\n  type: OptionType\n  value: string | number\n}\n\nexport interface ApiOptions {\n  methods: Methods\n  apiType: ApiType\n  value: string\n  options: Option[]\n}\n"],
+  "mappings": ";;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAO,IAAK;AAAL,UAAK,UAAL;AACL,oBAAM;AACN,qBAAO;AACP,oBAAM;AACN,uBAAS;AACT,wBAAU;AACV,sBAAQ;AAAA,GANE;AASL,IAAK;AAAL,UAAK,UAAL;AACL,mBAAK;AACL,sBAAQ;AACR,uBAAS;AAAA,GAHC;AAML,IAAK;AAAL,UAAK,aAAL;AACL,wBAAO;AACP,wBAAO;AACP,wBAAO;AAAA,GAHG;",
+  "names": []
+}
